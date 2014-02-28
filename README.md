@@ -3,12 +3,8 @@ assignment
 
 Setup ENV
 --------
-Step 1: mkvirtualenv assginment
-Step 2: pip install -r requirements/base.txt
-=======
 Step 1: mkvirtualenv assginment <br/>
-Step 2: pip install requirements/base.txt
->>>>>>> d3b16f6981f596ee5c797232e1f133e028a4171f
+Step 2: pip install -r requirements/base.txt
 
 Setup DB
 --------
