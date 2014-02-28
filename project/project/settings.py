@@ -1,5 +1,5 @@
 """
-Django settings for portfolio project.
+Django settings for project project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '(yiads0z#gmtq)@&jlx(4)045&0gt^f_e#e40zm5yc5un)+(oq'
+SECRET_KEY = 'zm-0ue6b47w9&=p8x40gleq)%g60irvt53c*y$z2m+)h2yypd5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -47,9 +47,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'portfolio.urls'
+ROOT_URLCONF = 'project.urls'
 
-WSGI_APPLICATION = 'portfolio.wsgi.application'
+WSGI_APPLICATION = 'project.wsgi.application'
 
 
 # Database
