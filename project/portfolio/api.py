@@ -1,9 +1,9 @@
 # myapp/api.py
 from tastypie.resources import ModelResource
-from portfolio.models import Color
+from portfolio.models import Portfolio
 from tastypie.authorization import Authorization
 
-class ColorResource(ModelResource):
+class PortfolioResource(ModelResource):
     class Meta:
         queryset = Color.objects.all()
         resource_name = 'color'
