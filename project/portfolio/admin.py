@@ -1,3 +1,4 @@
 from django.contrib import admin
+from portfolio.models import Color
 
-# Register your models here.
+admin.site.register(Color)
