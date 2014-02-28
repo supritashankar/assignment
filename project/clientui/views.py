@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.shortcuts import render_to_response
+from django.conf import settings
 import json
 
 import requests
 
 def results(request):
-  api_url = "http://127.0.0.1:8000/api/color/?format=json"
+  api_url = settings.API_URL
   results = requests.get(api_url)
   resp = json.loads(results.content)
   colors = resp["objects"]
