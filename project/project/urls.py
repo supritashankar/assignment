@@ -6,10 +6,7 @@ admin.autodiscover()
 color_resource = ColorResource()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'project.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
-
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^clientui/',include('clientui.urls')),
     url(r'^api/', include(color_resource.urls)),
 )
