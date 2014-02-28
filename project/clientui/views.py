@@ -9,13 +9,9 @@ def results(request):
   api_url = settings.API_URL
   results = requests.get(api_url)
   resp = json.loads(results.content)
-  colors = resp["objects"]
-
-  """ Filter according to results
-      red_c = colors.filter('color' == 'R')
-      similarly for blue and green
-  """
-
-  red_c = colors.filter('color' == 'R')
-  blue_c = colors.filter('color' == 'B')
+  portfolios = resp["objects"]
+  red_c = []
+  for portfolio in portfolios:
+    if portfolio'color'] == 'R':
+      red_c.append(color)
   return render_to_response('clientui/results.html', locals())
