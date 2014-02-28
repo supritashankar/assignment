@@ -22,6 +22,10 @@
     </div>
 <div class="container">
 Show me the colors!!!
+{% for color in colors %}
+  {{ color.id }}
+  {{ color.color }}
+{% endfor %}
 </div>
 </body>
 </html>
