@@ -5,7 +5,7 @@ from tastypie.authorization import Authorization
 
 class PortfolioResource(ModelResource):
     class Meta:
-        queryset = Color.objects.all()
-        resource_name = 'color'
+        queryset = Portfolio.objects.all()
+        resource_name = 'portfolio'
 	authorization = Authorization()
 	allowed_methods = ['get', 'put']

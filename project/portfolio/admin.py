@@ -1,4 +1,4 @@
 from django.contrib import admin
-from portfolio.models import Color
+from portfolio.models import Portfolio
 
-admin.site.register(Color)
+admin.site.register(Portfolio)

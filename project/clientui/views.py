@@ -16,4 +16,6 @@ def results(request):
       similarly for blue and green
   """
 
+  red_c = colors.filter('color' == 'R')
+  blue_c = colors.filter('color' == 'B')
   return render_to_response('clientui/results.html', locals())
