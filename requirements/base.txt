@@ -1,3 +1,4 @@
-django
-django-tastypie
-requests
+Django==1.6.2
+South==0.8.4
+requests==2.2.1
+django-tastypie==0.11.0
