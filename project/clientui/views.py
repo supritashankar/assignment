@@ -3,6 +3,7 @@ from django.shortcuts import render_to_response
 from django.conf import settings
 from django.core.context_processors import csrf
 from django.template import RequestContext
+from django.http import HttpResponse
 
 import json
 import requests
@@ -24,7 +25,7 @@ def results(request):
                               )
       if response.status_code == 204:
         message = {'status' : 'ok', 'message': 'success'}
-        return HttpResponse(simplejson.dumps(message), mimetype = 'application/json')
+        return HttpResponse(json.dumps(message), mimetype = 'application/json')
       else:
  	message = {'status' : 'oops', 'message': 'error!!'}
         return HttpResponse(json.dumps(message), mimetype = 'application/json')
