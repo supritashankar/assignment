@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import render_to_response
 from django.conf import settings
 from django.core.context_processors import csrf
+from django.template import RequestContext
 
 import json
 import requests
@@ -9,8 +10,6 @@ import requests
 from clientui.forms import PortfolioUpdateForm
 
 def results(request):
-  c = {}
-  c.update(csrf(request))
   form = PortfolioUpdateForm()
   if request.method == 'POST':
     form = PortfolioUpdateForm(request.POST)
@@ -29,7 +28,6 @@ def results(request):
  	message = {'status' : 'oops', 'message': 'error!!'}
         return HttpResponse(json.dumps(message), mimetype = 'application/json')
 
-  c['form'] = form
   api_url = settings.API_URL
   results = requests.get(api_url)
   resp = json.loads(results.content)
@@ -38,4 +36,5 @@ def results(request):
   for portfolio in portfolios:
     if portfolio['color'] == 'R':
       red_c.append(portfolio)
-  return render_to_response('clientui/results.html', locals())
+  return render_to_response('clientui/results.html', locals(), RequestContext(request))
+
