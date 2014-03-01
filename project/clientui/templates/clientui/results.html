@@ -42,7 +42,8 @@ Green colors
 {% endfor %}
 </div>
 </div>
-<form role="form" action='http://127.0.0.1:8000/clientui/results/' method='POST' id='update-form'>
+<h3>Update Colors</h3>
+<form role="form" action='http://127.0.0.1:8000/clientui/results/' method='POST' id='update-form' class="form-inline">
   {% csrf_token %}
   <div class="form-group">
     <label>ObjectID</label>
