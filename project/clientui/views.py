@@ -1,16 +1,17 @@
 from django.shortcuts import render
 from django.shortcuts import render_to_response
 from django.conf import settings
+from django.core.context_processors import csrf
 
 import json
 import requests
 
-from clientui.forms import PortfolioUpdate
+from clientui.forms import PortfolioUpdateForm
 
 def results(request):
   c = {}
   c.update(csrf(request))
-  form = PortfolioUpdate()
+  form = PortfolioUpdateForm()
   if request.method == 'POST':
     form = PortfolioUpdateForm(request.POST)
     if form.is_valid():
