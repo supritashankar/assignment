@@ -35,8 +35,13 @@ Show all the colors!!!
 {% endfor %}
 </div>
 
-<form action='{{ form.post_url }}' method='POST' id='update-form'>
-  {% crispy form %}
+<form action='http://127.0.0.1:8000/clientui/results' method='POST' id='update-form'>
+  {% csrf_token %}
+  <fieldset>
+    <label>ObjectID <input type="text" id="object_id" name="object_id" class='span3'></label><br />
+    <label>Color Choice <input type="text" id="color_choices" name="color_choices" class='span3'></label><br />
+    <button type="submit" class="btn">Submit</button>
+  </fieldset>
 </form>
 </body>
 </html>
