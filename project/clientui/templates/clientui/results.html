@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 {% load staticfiles %}
+{% load crispy_forms_tags %}
+
 <html>
   <head>
     <meta charset="utf-8" />
@@ -32,5 +34,9 @@ Show all the colors!!!
   {{ color.color }}
 {% endfor %}
 </div>
+
+<form action='{{ form.post_url }}' method='POST' id='update-form'>
+  {% crispy form %}
+</form>
 </body>
 </html>
