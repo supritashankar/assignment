@@ -1,11 +1,34 @@
 from django.shortcuts import render
 from django.shortcuts import render_to_response
 from django.conf import settings
-import json
 
+import json
 import requests
 
+from clientui.forms import PortfolioUpdate
+
 def results(request):
+  c = {}
+  c.update(csrf(request))
+  form = PortfolioUpdate()
+  if request.method == 'POST':
+    form = PortfolioUpdateForm(request.POST)
+    if form.is_valid():
+      color_choice = form.cleaned_data['color_choice']
+      data = '{"color":' + str(color_choice) + '}'
+      url = "http://127.0.0.1:8000/api/portfolio/" + form.cleaned_data['object_id'] + "/\?format\=json"
+      response = requests.put( url,
+                	       data=data,                         
+                	       headers={'content-type':'application/json'},
+                              )
+      if response.status == 204:
+        message = {'status' : 'ok', 'message': 'success'}
+        return HttpResponse(simplejson.dumps(message), mimetype = 'application/json')
+      else:
+ 	message = {'status' : 'oops', 'message': 'error!!'}
+        return HttpResponse(json.dumps(message), mimetype = 'application/json')
+
+  c['form'] = form
   api_url = settings.API_URL
   results = requests.get(api_url)
   resp = json.loads(results.content)

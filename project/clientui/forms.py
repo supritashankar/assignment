@@ -11,7 +11,7 @@ from crispy_forms.bootstrap import FormActions
 
 class PortfolioUpdateForm(forms.Form):
 
-    object_ID = forms.CharField(
+    object_id = forms.CharField(
         label = "ID of the object you want to update",
         widget= forms.Textarea,
         required = True
