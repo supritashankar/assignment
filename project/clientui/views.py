@@ -12,6 +12,6 @@ def results(request):
   portfolios = resp["objects"]
   red_c = []
   for portfolio in portfolios:
-    if portfolio'color'] == 'R':
+    if portfolio['color'] == 'R':
       red_c.append(color)
   return render_to_response('clientui/results.html', locals())
