@@ -14,7 +14,7 @@ def results(request):
   if request.method == 'POST':
     form = PortfolioUpdateForm(request.POST)
     if form.is_valid():
-      color_choice = form.cleaned_data['color_choice']
+      color_choice = form.cleaned_data['color_choices']
       data = '{"color":' + str(color_choice) + '}'
       url = "http://127.0.0.1:8000/api/portfolio/" + form.cleaned_data['object_id'] + "/\?format\=json"
       response = requests.put( url,
