@@ -17,7 +17,7 @@ def results(request):
     if form.is_valid():
       color_choice = '"' + form.cleaned_data['color_choices'] + '"'
       data = '{"color":' + str(color_choice) + '}'
-      url = "http://127.0.0.1:8000/api/portfolio/" + form.cleaned_data['object_id'] +"/"
+      url = settings.API_UPDATE_URL + form.cleaned_data['object_id'] +"/"
       headers = {"Content-Type": "application/json"}
       response = requests.put( url,
                 	       data=data,                         

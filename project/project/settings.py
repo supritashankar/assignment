@@ -27,7 +27,7 @@ TEMPLATE_DEBUG = True
 ALLOWED_HOSTS = []
 
 API_URL = "http://127.0.0.1:8000/api/portfolio/?format=json"
-
+API_UPDATE_URL = "http://127.0.0.1:8000/api/portfolio/"
 # Application definition
 
 INSTALLED_APPS = (
