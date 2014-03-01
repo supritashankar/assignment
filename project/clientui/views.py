@@ -34,9 +34,18 @@ def results(request):
   results = requests.get(api_url)
   resp = json.loads(results.content)
   portfolios = resp["objects"]
+
   red_c = []
+  blue_c = []
+  green_c =  []
+
   for portfolio in portfolios:
+    print portfolio['color']
     if portfolio['color'] == 'R':
       red_c.append(portfolio)
+    elif portfolio['color'] == 'B':
+      blue_c.append(portfolio)
+    else:
+      green_c.append(portfolio)
   return render_to_response('clientui/results.html', locals(), RequestContext(request))
 
