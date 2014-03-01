@@ -14,14 +14,15 @@ def results(request):
   if request.method == 'POST':
     form = PortfolioUpdateForm(request.POST)
     if form.is_valid():
-      color_choice = form.cleaned_data['color_choices']
+      color_choice = '"' + form.cleaned_data['color_choices'] + '"'
       data = '{"color":' + str(color_choice) + '}'
-      url = "http://127.0.0.1:8000/api/portfolio/" + form.cleaned_data['object_id'] + "/\?format\=json"
+      url = "http://127.0.0.1:8000/api/portfolio/" + form.cleaned_data['object_id'] +"/"
+      headers = {"Content-Type": "application/json"}
       response = requests.put( url,
                 	       data=data,                         
-                	       headers={'content-type':'application/json'},
+                	       headers = headers,
                               )
-      if response.status == 204:
+      if response.status_code == 204:
         message = {'status' : 'ok', 'message': 'success'}
         return HttpResponse(simplejson.dumps(message), mimetype = 'application/json')
       else:
