@@ -42,14 +42,22 @@ Green colors
 {% endfor %}
 </div>
 </div>
-
-<form action='http://127.0.0.1:8000/clientui/results/' method='POST' id='update-form'>
+<form role="form" action='http://127.0.0.1:8000/clientui/results/' method='POST' id='update-form'>
   {% csrf_token %}
-  <fieldset>
-    <label>ObjectID <input type="text" id="object_id" name="object_id" class='span3'></label><br />
-    <label>Color Choice <input type="text" id="color_choices" name="color_choices" class='span3'></label><br />
+  <div class="form-group">
+    <label>ObjectID</label>
+    <input type="text" class="form-control" id="object_id" name="object_id" placeholder="Enter Object_ID">
+  </div>
+  <div class="form-group">
+    <label>Color Choice </label>
+    <select class="form-control" id='color_choices' name='color_choices'>
+     <option>B</option>
+     <option>G</option>
+     <option>R</option>
+    </select>
+  </div>
     <button type="submit" class="btn">Submit</button>
-  </fieldset>
+  </div>
 </form>
 </body>
 </html>

@@ -40,7 +40,6 @@ def results(request):
   green_c =  []
 
   for portfolio in portfolios:
-    print portfolio['color']
     if portfolio['color'] == 'R':
       red_c.append(portfolio)
     elif portfolio['color'] == 'B':
