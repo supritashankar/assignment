@@ -48,3 +48,14 @@ def results(request):
       green_c.append(portfolio)
   return render_to_response('clientui/results.html', locals(), RequestContext(request))
 
+
+def colors(request):
+  return render_to_response('clientui/colors.html')
+
+def retrieve_colors(request, color):
+  if color == 'B':
+   response = requests.get("http://127.0.0.1:8000/api/portfolio/?color=B")
+   color = 'Blue'
+   resp = json.loads(response.content)
+   objs = resp["objects"]
+  return render_to_response('clientui/color-results.html', locals(), RequestContext(request)) 
