@@ -3,9 +3,8 @@ assignment
 
 ## Setup ENV
 
-        ``` mkvirtualenv assignment ```
- 
-        ``` pip install -r requirements/base.txt ```
+            mkvirtualenv assignment 
+            pip install -r requirements/base.txt
 
 ## Setup DB
 
