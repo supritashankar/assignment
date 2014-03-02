@@ -11,7 +11,7 @@ assignment
 
 * Create DB
   
-  	$ python manage.py syncdb
+  	.. python manage.py syncdb
 
 * Create dummy data
 
