@@ -9,15 +9,23 @@ assignment
 
 ## Setup DB
 
-* python manage.py syncdb
+* Create DB
+  
+  	$ python manage.py syncdb
 
-* http://127.0.0.1:8000/admin/portfolio/
+* Create dummy data
+
+  	$ http://127.0.0.1:8000/admin/portfolio/
 
 ## View Results
 
-* http://127.0.0.1:8000/clientui/results/ 
+* Update and view previous data
 
-* http://127.0.0.1:8000/clientui/colors/
+  	$ http://127.0.0.1:8000/clientui/results/ 
+
+* More user friendly
+
+  	$ http://127.0.0.1:8000/clientui/colors/
 
 ## License
 
