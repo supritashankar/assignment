@@ -10,4 +10,4 @@ env:
   - Django=1.6 DJANGO_SETTINGS_MODULE='project.settings'
 
 script:
-  - python manage.py test
+  - python project/manage.py test
