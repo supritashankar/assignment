@@ -29,6 +29,12 @@ assignment
 
   	``` http://127.0.0.1:8000/clientui/colors/ ```
 
+## Tests
+
+* Some initial tests
+
+	``` python manage.py test ```
+
 ## License
 
 * MIT licensed
