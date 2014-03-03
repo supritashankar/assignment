@@ -5,3 +5,9 @@ python:
 
 # command to install dependencies
 install: "pip install -r requirements/base.txt"
+
+env:
+  - Django=1.6 DJANGO_SETTINGS_MODULE='project.settings'
+
+script:
+  - python manage.py test
