@@ -1,4 +1,3 @@
 -r base.txt
 
-django-discover-runner==0.3
 factory-boy==1.3.0
