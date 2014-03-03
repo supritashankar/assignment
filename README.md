@@ -1,5 +1,6 @@
 assignment
 ==========
+[![Build Status](https://travis-ci.org/supritashankar/assignment.png?branch=master)](https://travis-ci.org/supritashankar/assignment)
 
 ## Setup ENV
 
