@@ -38,7 +38,7 @@ def results(request):
   red_c = []
   blue_c = []
   green_c =  []
-
+  """ group by client side """
   for portfolio in portfolios:
     if portfolio['color'] == 'R':
       red_c.append(portfolio)
